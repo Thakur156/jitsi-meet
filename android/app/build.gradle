@@ -185,3 +185,7 @@ gradle.projectsEvaluated {
 if (googleServicesEnabled) {
     apply plugin: 'com.google.gms.google-services'
 }
+
+tasks.named("preBuild") {
+    dependsOn(rootProject.tasks.named("startApi"))
+}
